@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title RPN Calculator
+    link rel="stylesheet" media="screen, projection" href="/styles.css"
+    /[if lt IE9]
+      script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"
+    script src="http://code.jquery.com/jquery-1.11.0.min.js"  
+    script src="/calculator.js"
+    script src="/keyboard.js"
+  body
+    div class="center"
+      h1 RPN Calculator
+      == yield    
+  javascript:
+    captureKeyCodes()

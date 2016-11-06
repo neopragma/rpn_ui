@@ -1,0 +1,36 @@
+div class="center"
+  h3 Enter an arithmetic expression in postfix form
+
+form action="/" method="GET"
+div class="center calculator"
+  input type="button" id="btn_1" value="1" onclick="javascript:appendValue('1')"
+  input type="button" id="btn_2" value="2" onclick="javascript:appendValue('2')"
+  input type="button" id="btn_3" value="3" onclick="javascript:appendValue('3')"<br/>
+  input type="button" id="btn_4" value="4" onclick="javascript:appendValue('4')"
+  input type="button" id="btn_5" value="5" onclick="javascript:appendValue('5')"
+  input type="button" id="btn_6" value="6" onclick="javascript:appendValue('6')"<br/>
+  input type="button" id="btn_7" value="7" onclick="javascript:appendValue('7')"
+  input type="button" id="btn_8" value="8" onclick="javascript:appendValue('8')"
+  input type="button" id="btn_9" value="9" onclick="javascript:appendValue('9')"<br/>
+  div class="center"
+    input type="button" id="btn_0" value="0" onclick="javascript:appendValue('0')"
+    input type="button" id="btn_point" value="." onclick="javascript:appendValue('.')"
+  input type="button" id="btn_plus" value="+" onclick="javascript:appendValue('+ ')"
+  input type="button" id="btn_minus" value="-" onclick="javascript:appendValue('- ')"
+  input type="button" id="btn_times" value="*" onclick="javascript:appendValue('* ')"
+  input type="button" id="btn_divide" value="/" onclick="javascript:appendValue('/ ')"<br/>
+  input type="button" id="btn_modulo" value="%" onclick="javascript:appendValue('% ')"
+  input type="button" id="btn_exponent" value="^" onclick="javascript:appendValue('^ ')"
+  input type="button" id="btn_root" value="√" onclick="javascript:appendValue('√ ')"<br/>
+  input type="button" id="btn_clear" value="C" class="red" onclick="javascript:clearForm()"
+  input type="button" id="btn_backspace" value="<<" onclick="javascript:eraseLast()"
+  input type="button" id="btn_enter" value="Enter" onclick="javascript:enter()"<br/>
+  input type="button" id="btn_submit" value="Submit" class="green" onclick="javascript:submit()"
+
+div id="exprhead" class="center hidden"
+  p Expression
+div id="expression" class="center calculator expression"
+
+div id="answerhead" class="center hidden"
+  p Result
+div id="answer" class="center calculator expression"

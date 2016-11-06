@@ -1,0 +1,32 @@
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;	
+}
+
+.hidden {
+  display: none;
+}
+
+.calculator {
+  border: 1px solid black;
+  width: 200px;
+  background-color: #69C;
+  border-radius: 25px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.expression {
+  color: #fff;
+  display: none;
+}
+
+.red {
+  color: #fff;
+  background-color: #f00;
+}
+
+.green {
+  background-color: #0f0;
+}
