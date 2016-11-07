@@ -1,16 +1,16 @@
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
 
-RSpec::Core::RakeTask.new(:spec)
-
-desc "Run rpn_ruby unit tests"
-task :unit do        
-  exec "rspec spec/lib/rpn_ruby"
+Cucumber::Rake::Task.new :features do |t|
+  t.profile = "html_report"
 end
 
-desc "Run rpn_service tests"
-task :service do      
-  exec "rspec spec/lib/rpn_service"
+Cucumber::Rake::Task.new :interactive do |t|
+  t.profile = "pretty"
 end
 
-task :default => :spec
+task :default => :features
+
+
+

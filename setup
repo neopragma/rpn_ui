@@ -1,0 +1,71 @@
+#!/bin/bash
+# Set up local dev/test environment for rpn_ui
+
+function installed {
+  if [ $(which "$1") ]; then
+    echo "    $1 was installed successfully"
+  else
+    echo "    Unable to install $1; please review console output"
+    exit 1
+  fi
+}
+
+function ensure_home_bin_exists() {
+  [ -d "$HOME/bin" ] && $(mkdir -p "$HOME/bin")
+  [ -x "$HOME/bin" ] && $(chmod +x "$HOME/bin")
+}
+
+function ensure_unzip_is_installed() {
+  [ "$(which unzip)" ] && sudo apt -y install unzip
+}
+
+function install_chromedriver() {
+  pushd "$HOME/Downloads"
+  wget -O chromedriver.zip http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip
+  ensure_unzip_is_installed
+  unzip chromedriver.zip
+  ensure_home_bin_exists
+  cp chromedriver "$HOME/bin"
+  popd
+  installed chromedriver
+}
+
+function install_phantomjs() {
+  pushd "$HOME/downloads"
+  wget -O phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+  tar -xjf phantomjs.tar.bz2
+  ensure_home_bin_exists
+  cp phantomjs-2.1.1-linux-x86_64/bin/phantomjs "$HOME/bin"
+  popd
+  installed phantomjs
+}
+
+function install_Xvfb() {
+  sudo apt -y install Xvfb
+  installed Xvfb
+}
+
+function install_bundler() {
+  sudo gem install bundler
+  installed bundler
+}
+
+need() {
+  if [ $(which "$1") ] || [ $(which "$(echo ${1} | tr '[:upper:]' '[:lower:]')")]; then
+    echo "    $1 is already installed"
+  else
+    echo "    $1 not found on PATH; installing"
+    "$(install_${1})"
+  fi
+}
+
+echo
+echo 'Checking local environment and optionally installing dev/test dependencies'
+items=('chromedriver' 'phantomjs' 'Xvfb' 'bundler')
+for item in "${items[@]}"
+do
+  need "$item"
+done
+
+echo "Local dev/test environment appears to be usable"
+echo

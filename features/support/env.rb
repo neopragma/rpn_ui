@@ -3,6 +3,8 @@ require 'capybara'
 
 if ENV["HEADLESS"] then
   require 'headless'
+  headless = Headless.new
+  headless.start
 end
  
 Capybara.default_driver = :selenium
@@ -28,7 +30,6 @@ Before do
     '%' => 'btn_modulo', 
     '^' => 'btn_exponent', 
     '√' => 'btn_root', 
-    '%' => 'btn_modulo', 
     'C' => 'btn_clear',
     '<<' => 'btn_backspace',
     ' ' => 'btn_enter'
@@ -37,4 +38,5 @@ end
  
 at_exit do
   @browser.close if @browser
+  headless.destroy
 end
