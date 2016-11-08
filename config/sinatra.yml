@@ -1,0 +1,7 @@
+# Sinatra configuration file
+
+development:
+  service_url: http://localhost:3000
+production:
+  service_url: http://rpn-service.herokuapp.com
+  
