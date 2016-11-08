@@ -8,12 +8,11 @@ require 'yaml'
 
 configure do
   set :port, ENV['PORT'] || '3001'
+  set :env, ENV['RACK_ENV'] || 'development'
+  set :env, 'development'
+
   if File.exist?("config/sinatra.yml")
   	$config = YAML.load_file("config/sinatra.yml")
-
-puts "===> $config: #{$config}"
-puts "===> ENV['RACK_ENV']: #{ENV['RACK_ENV']}"
-
   end	
 end
 
@@ -30,7 +29,7 @@ post '/runMethod' do
     .gsub(/√/,'r')
     .gsub(/ /,'/')
     .gsub(/\%/,'\%25')
-  service_url = "#{$config[ENV['RACK_ENV']]['service_url']}/calc/#{postfix}"
+  service_url = "#{$config[settings.env]['service_url']}/calc/#{postfix}"
   response = RestClient.get service_url
   @result = JSON.parse(response)['rpn']['result']
   slim :index
