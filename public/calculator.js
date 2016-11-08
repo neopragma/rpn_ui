@@ -1,18 +1,16 @@
 function appendValue(value) {
-  document.getElementById("exprhead").style.display="block";
-  document.getElementById("expression").style.display="block";
   document.getElementById("expression").innerHTML+=value;
+  document.getElementById("exprdata").value+=value;
 }
 function clearForm() {
-  document.getElementById("answerhead").style.display="none";
-  document.getElementById("answer").style.display="none";
   document.getElementById("answer").innerHTML=" ";
-  document.getElementById("exprhead").style.display="none";
-  document.getElementById("expression").style.display="none";
   document.getElementById("expression").innerHTML=" ";
+  document.getElementById("exprdata").value=" ";
+  document.location="/";
 }
 function eraseLast() {
   expression().innerHTML=expression().innerHTML.slice(0,-2);
+  exprdata().value=expression().innerHTML;
   if (expression().innerHTML == "") {
     clearForm();
   }
@@ -26,17 +24,11 @@ function expression() {
   return document.getElementById("expression");
 }
 
+function exprdata() {
+  return document.getElementById("exprdata");
+}
+
 function submit() {
-  var postfix = document.getElementById("expression").innerHTML
-  postfix = postfix.replace(/\//g,"d");
-  postfix = postfix.replace(/√/g,"r");
-  postfix = postfix.replace(/ /g,"/");
-  postfix = postfix.replace(/\%/g,"\%25");
- 
-  $.getJSON("http://localhost:3000/calc/" + postfix, function (result) {
-    document.getElementById("answer").innerHTML = result['rpn']['result'];
-    document.getElementById("answerhead").style.display = "block";
-    document.getElementById("answer").style.display = "block";
-  });
+  document.getElementById("calcform").submit();
 }
 
