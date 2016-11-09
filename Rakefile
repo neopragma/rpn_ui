@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'cucumber'
 require 'cucumber/rake/task'
+require 'sinatra'
 
 Cucumber::Rake::Task.new :features do |t|
   t.profile = "html_report"
