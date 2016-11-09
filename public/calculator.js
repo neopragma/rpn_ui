@@ -9,11 +9,13 @@ function clearForm() {
   document.location="/";
 }
 function eraseLast() {
-  expression().innerHTML=expression().innerHTML.slice(0,-2);
-  exprdata().value=expression().innerHTML;
-  if (expression().innerHTML == "") {
+//  value = expression().innerHTML;
+//  value = value.rstrip.value[0...value.rindex(' ')];
+//  expression().innerHTML=value;
+//  exprdata().value=value;
+//  if (expression().innerHTML == "") {
     clearForm();
-  }
+//  }
 }
 function enter() {
   if (expression().innerHTML.length > 0) {

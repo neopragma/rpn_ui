@@ -29,6 +29,11 @@ post '/runMethod' do
     .gsub(/√/,'r')
     .gsub(/ /,'/')
     .gsub(/\%/,'\%25')
+
+puts "===> url: #{$config[settings.env]['service_url']}/calc/"
+puts "===> postfix: #{postfix}"
+
+
   service_url = "#{$config[settings.env]['service_url']}/calc/#{postfix}"
   response = RestClient.get service_url
   @result = JSON.parse(response)['rpn']['result']
