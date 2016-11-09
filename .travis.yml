@@ -1,8 +1,8 @@
-sudo: required
-dist: trusty
 language: ruby
 rvm:
   - 2.3.1
+sudo: required
+dist: trusty
 cache: bundler
 before_script:
  - export CHROME_BIN=/usr/bin/google-chrome
@@ -26,9 +26,6 @@ notifications:
     - davenicolette@gmail.com
     on_success: change
     on_failure: change
-- ruby rpn_ui.rb &
-- HEADLESS=true rake interactive
-- kill `cat rpn_ui.pid`
 deploy:
   provider: heroku
   app: rpn-ui
