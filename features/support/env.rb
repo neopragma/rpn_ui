@@ -3,8 +3,8 @@ require 'capybara'
 
 if ENV["HEADLESS"] then
   require 'headless'
-  headless = Headless.new
-  headless.start
+  @headless = Headless.new
+  @headless.start
 end
  
 Capybara.default_driver = :selenium
@@ -38,5 +38,5 @@ end
  
 at_exit do
   @browser.close if @browser
-  headless.destroy if headless
+  @headless.destroy if @headless
 end
