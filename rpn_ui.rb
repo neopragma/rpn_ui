@@ -9,8 +9,7 @@ require 'yaml'
 configure do
   set :port, ENV['PORT'] || '3001'
   set :env, ENV['RACK_ENV'] || 'development'
-  set :env, 'development'
-
+ 
   if File.exist?("config/sinatra.yml")
   	$config = YAML.load_file("config/sinatra.yml")
   end	
