@@ -14,6 +14,9 @@ configure do
   if File.exist?("config/sinatra.yml")
   	$config = YAML.load_file("config/sinatra.yml")
   end	
+
+  puts "Webrick pid is #{Process.pid}"
+  File.open('rpn_ui.pid', 'w') {|f| f.write Process.pid}
 end
 
 
