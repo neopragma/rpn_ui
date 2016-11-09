@@ -48,7 +48,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rake (10.5.0)
+    rake (11.3.0)
     rest-client (2.0.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -95,12 +95,11 @@ DEPENDENCIES
   cucumber
   headless
   json
-  rack (= 1.6.4)
-  rake (= 10.5.0)
+  rake
   rest-client
   rspec
   selenium-webdriver
-  sinatra (= 1.4.7)
+  sinatra
   slim
 
 BUNDLED WITH
