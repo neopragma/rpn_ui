@@ -15,10 +15,6 @@ before_script:
  - unzip chromedriver_linux64.zip
  - chmod +x chromedriver
  - sudo mv chromedriver /usr/local/bin
-script:
-- ruby rpn_ui.rb &
-- bundle exec rake pretty
-- kill `cat rpn_ui.pid`
 env:
 - RACK_ENV=development
 notifications:
