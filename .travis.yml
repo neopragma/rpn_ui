@@ -20,6 +20,8 @@ script:
 - ruby rpn_ui.rb &
 - HEADLESS=true rake interactive
 - kill `cat rpn_ui.pid`
+env:
+- RACK_ENV=development
 notifications:
   email:
     recipients:
