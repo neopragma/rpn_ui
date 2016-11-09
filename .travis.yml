@@ -14,7 +14,7 @@ install:
 - bundle install
 script:
 - ruby rpn_ui.rb &
-- rake
+- bundle exec cucumber
 - kill `cat rpn_ui.pid`
 deploy:
   provider: heroku
