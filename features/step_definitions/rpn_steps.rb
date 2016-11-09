@@ -5,7 +5,7 @@ end
 When(/^I submit the expression$/) do
   @browser.navigate.to "http://localhost:3001/" 
   enter_values(@postfix_expression)
-  press_button 'btn_submit'	
+  @browser.find_element('id', 'calcform').submit
 end
 
 Then(/^the calculator returns "([^"]*)"$/) do |answer|

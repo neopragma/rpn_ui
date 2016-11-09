@@ -38,5 +38,5 @@ end
  
 at_exit do
   @browser.close if @browser
-  headless.destroy
+  headless.destroy if headless
 end
