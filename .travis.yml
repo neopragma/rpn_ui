@@ -1,20 +1,20 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
 sudo: required
 dist: trusty
 before_script:
- - export CHROME_BIN=/usr/bin/google-chrome
- - export DISPLAY=:99.0
- - sh -e /etc/init.d/xvfb start
- - sudo apt-get update
- - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
- - sudo dpkg -i google-chrome*.deb
- - CHROMEDRIVER_VERSION=$(curl -s http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
- - curl -L -O "http://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
- - unzip chromedriver_linux64.zip
- - chmod +x chromedriver
- - sudo mv chromedriver /usr/local/bin
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sudo apt-get update
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+- sudo dpkg -i google-chrome*.deb
+- CHROMEDRIVER_VERSION=$(curl -s http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+- curl -L -O "http://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+- unzip chromedriver_linux64.zip
+- chmod +x chromedriver
+- sudo mv chromedriver /usr/local/bin
 script:
 - echo 'hello'
 env:
@@ -29,4 +29,4 @@ deploy:
   provider: heroku
   app: rpn-ui
   api_key:
-    secure: AC/iZDWtKhVFMCJ/GFZVq3wO4CXAstzHxHs/VtpK7KodPbFCfMcmuuUHf1AdQhKbiUMXoX6hO9oBMGXADEk3QAZUDpF35kOK9w83Nlh5dZFTFMMcwvMjGDBt+ycFfjwB7tDUTcLioxc7ZfcN5+IkeA2xRJ1HNJEVJPhh64hQ+bouosW+TjEVk8H2xtBdyG3Mk2WcmdxP81qYuSk5Esdtg7cD7jIbhzmF6pGCUO3ZMq/DAC+h0ZQ77ieovZm3UVsov8j5QZtoFEqZFzcrg0Ly3ia/Z0JMChF1Gx3tXIQ9roSYpEyhIVriDJiFsEaEAJNm/oEO24qvPZYZTEVSaS+g3Amannbbp6wBQoteXg6kGsO1gjlWlQ/wT23Xs9puhYBzU152v7Y3rI47CVz3rYfURbezrhart+XV1R5OCgx06611ahFE5X6006WnmDSZ89d12K6KbKVGgP863js14e+PWlRIaBM365WSsnms6cehpyfLIu7r8AZxHGZUsQ+gMvCFV/nzs7I7KLwdug9DFZL2iY9rITo9ZKpy/MCrETSB3VdP+/68YKAGwP3/RHjHIxDAFmnH2w0w/VkCMvQPgnFT0imC0CnSvMjTjoqyJ8TXIw3y0tpW3hc7W+CyqPovZceiEp0+0LfHillQm8VQCse1qCjbxOsC44mw62UvfS9GT+Q=
+    secure: cZrZrYBIN9152OFPv1CBC6l68qlliLtRNHWbyIY87OqW7Aa5mePMng2CR6GwWfmJBeQdbZdUYHEBaeuJRJyB82763xrgaeqE6jJ5kYEdJyM8Nhy6AP8qEo+qxlUYqGQfISwfjL4RtdUTCEUrEzKmXsxlsPv1XxWPcbUVFW6jnIWJqP3t82Sx7iKmCD0g8zew2QopsLl/2bovrUSI/LMwP0ihlLmGzfinrm+f3TrNoHOm1FUhxvM3ZDxNCo8JyKxH1l1W9RwjBw3F4SDcz/WLVayp+c+P5b8GlPXPQ8BOywoNr8BUXCfNs0QASOQ+Acg5fQg6ySVK08+CjEp7nflo0NdZtw5s3CRfqlnKbVC2u03HDL0z6SOi/GSz/T0eTBHxmN5yH7Ei8bfxSs7hRDQ7LQN/Fw/TFhn1osiBZsHDQHdCHePaMCqvP4EVciU8YA6erWJxQwBPs0Ne5T2SHpQOKyIP8SAtLPCyWhPx8CIngX46bXVxh+FFy+PBD3p3/femEWO6AlqnDyQW8TqpHOWg35MBD2T7t4WxL11ZccHIm5xhY1XKWsZyGA19oJz83YKAM3w1LZybTBMtvAPwFcde5Mo8TrSWrgKkZQLz2MAZWjTzqpD13nqMgpC93ATpRWcMnarbonWDzjzRkQHvO2NnZTBjc0vPEM1QLA4fiIfyQy4=
