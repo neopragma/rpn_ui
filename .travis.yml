@@ -17,7 +17,7 @@ before_script:
  - sudo mv chromedriver /usr/local/bin
 script:
 - ruby rpn_ui.rb &
-- bundle exec rake
+- bundle exec rake pretty
 - kill `cat rpn_ui.pid`
 env:
 - RACK_ENV=development
