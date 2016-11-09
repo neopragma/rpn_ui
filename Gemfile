@@ -4,7 +4,7 @@ gem 'rake'
 gem 'json'
 gem 'slim'
 gem 'rest-client'
-gem 'sinatra', github: 'sinatra'
+gem 'sinatra', :git => 'git://github.com/sinatra/sinatra.git'
 
 group :test do
   gem 'cucumber'
