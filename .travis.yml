@@ -15,6 +15,7 @@ before_script:
  - unzip chromedriver_linux64.zip
  - chmod +x chromedriver
  - sudo mv chromedriver /usr/local/bin
+ - ruby rpn_ui.rb &
 env:
 - RACK_ENV=development
 notifications:
