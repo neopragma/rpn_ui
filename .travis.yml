@@ -11,10 +11,11 @@ sudo: required
 branches:
   only: master
 install:
+- ./script
 - bundle install
 script:
 - ruby rpn_ui.rb &
-- bundle exec cucumber
+- HEADLESS=true rake interactive
 - kill `cat rpn_ui.pid`
 deploy:
   provider: heroku

@@ -20,13 +20,13 @@ function ensure_unzip_is_installed() {
 }
 
 function install_chromedriver() {
-  pushd "$HOME/Downloads"
+#  pushd "$HOME/Downloads"
   wget -O chromedriver.zip http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip
   ensure_unzip_is_installed
   unzip chromedriver.zip
   ensure_home_bin_exists
   cp chromedriver "$HOME/bin"
-  popd
+#  popd
   installed chromedriver
 }
 
@@ -61,7 +61,7 @@ need() {
 
 echo
 echo 'Checking local environment and optionally installing dev/test dependencies'
-items=('chromedriver' 'phantomjs' 'Xvfb' 'bundler')
+items=('chromedriver' 'Xvfb' 'bundler')
 for item in "${items[@]}"
 do
   need "$item"

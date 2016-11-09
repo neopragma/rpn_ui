@@ -27,20 +27,12 @@ end
 
 post '/runMethod' do
   @expression_value = params[:exprdata]
-
-puts "===> params[:exprdata]: #{params[:exprdata]}"
-
   postfix = params[:exprdata]
     .gsub(/\//,'d')
     .gsub(/√/,'r')
     .gsub(/ /,'/')
     .gsub(/%/,'%25')
     .gsub(/\^/,'%5E')
-
-puts "===> url: #{$config[settings.env]['service_url']}/calc/"
-puts "===> postfix: #{postfix}"
-
-
   service_url = "#{$config[settings.env]['service_url']}/calc/#{postfix}"
   response = RestClient.get service_url
   @result = JSON.parse(response)['rpn']['result']
