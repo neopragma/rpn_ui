@@ -3,7 +3,6 @@ rvm:
   - 2.3.1
 sudo: required
 dist: trusty
-cache: bundler
 before_script:
  - export CHROME_BIN=/usr/bin/google-chrome
  - export DISPLAY=:99.0
@@ -16,6 +15,7 @@ before_script:
  - unzip chromedriver_linux64.zip
  - chmod +x chromedriver
  - sudo mv chromedriver /usr/local/bin
+ - bundle install
 script:
 - ruby rpn_ui.rb &
 - HEADLESS=true rake interactive
