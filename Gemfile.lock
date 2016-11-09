@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/sinatra/sinatra.git
+  revision: af6dad2a6c31e31617712b15f455b2a3d3eb1c06
+  specs:
+    rack-protection (2.0.0.beta2)
+      rack
+    sinatra (2.0.0.beta2)
+      mustermann (= 1.0.0.beta2)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0.beta2)
+      tilt (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,14 +51,15 @@ GEM
     mini_portile2 (2.1.0)
     multi_json (1.12.1)
     multi_test (0.1.2)
+    mustermann (1.0.0.beta2)
     netrc (0.11.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    public_suffix (2.0.3)
+    public_suffix (2.0.4)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rake (11.3.0)
+    rake (10.5.0)
     rest-client (2.0.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -65,7 +78,7 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     rubyzip (1.2.0)
-    selenium-webdriver (3.0.0)
+    selenium-webdriver (3.0.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
@@ -89,10 +102,11 @@ DEPENDENCIES
   cucumber
   headless
   json
-  rake
+  rake (= 10.5.0)
   rest-client
   rspec
   selenium-webdriver
+  sinatra!
   slim
 
 BUNDLED WITH
